@@ -1,7 +1,7 @@
 <sly data-sly-use.cpp="/libs/composum/platform/models/htl/cppl.html"
      data-sly-use.cpn="/libs/composum/platform/models/htl/cpnl.html"/>
-<sly data-sly-call="${cpp.startElement @ var='model', type='com.composum.pages.components.model.search.SearchResult'}"/>
-<sly data-sly-use.model="${'com.composum.pages.components.model.search.SearchResult' @ fromPageContextKey='model'}"/>
+<sly data-sly-call="${cpp.startElement @ var='model', type='com.composum.pages.components.model.search.prototype.SlingModelsSearchResult'}"/>
+<sly data-sly-use.model="${'com.composum.pages.components.model.search.prototype.SlingModelsSearchResult' @ fromPageContextKey='model'}"/>
 ${model.headFormatted @ context='unsafe'}
 <div data-sly-test="${model.hasError}" class="alert alert-danger" role="alert">${model.searchtermErrorText}</div>
 <sly data-sly-list.result="${model.results}">

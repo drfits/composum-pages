@@ -2,20 +2,20 @@
      data-sly-use.cpn="/libs/composum/platform/models/htl/cpnl.html"/>
 
 <sly data-sly-call="${cpp.startElement @ var='field',
-    type='com.composum.pages.components.model.search.SearchField'}"/>
-<sly data-sly-use.field="${'com.composum.pages.components.model.search.SearchField' @ fromScope='page', key='field'}"/>
+    type='com.composum.pages.components.model.search.prototype.SlingModelsSearchField'}"/>
+<sly data-sly-use.field="${'com.composum.pages.components.model.search.prototype.SlingModelsSearchField' @ fromScope='page', key='field'}"/>
     <sly data-sly-call="${cpn.startForm @ action=field.searchResultLink, method='GET'}"/>
-        <div class="input-group" title="${field.hint}">
-            <input type="text" name="search.text" class="form-control" placeholder="${field.placeholderText}"
+        <div class="input-group" title="${field.config.hint}">
+            <input type="text" name="search.text" class="form-control" placeholder="${field.config.placeholderText}"
                    aria-labelledby="searchbutton" role="searchbox">
             <span class="input-group-btn">
-                <button type="submit" class="btn btn-default ${field.buttonSymbol}"
+                <button type="submit" class="btn btn-default ${field.config.buttonSymbol}"
                         id="searchbutton" aria-label="Search">
-                    <sly data-sly-test.buttonImage="${field.buttonImage}">
-                        <sly data-sly-call="${cpn.startImage @ src=field.buttonImage}"/>
+                    <sly data-sly-test.buttonImage="${field.config.buttonImage}">
+                        <sly data-sly-call="${cpn.startImage @ src=field.config.buttonImage}"/>
                         <sly data-sly-call="${cpn.endImage}"/>
                     </sly>
-                    <sly data-sly-test="${!buttonImage}">${field.buttonText}</sly>
+                    <sly data-sly-test="${!buttonImage}">${field.config.buttonText}</sly>
                 </button>
             </span>
         </div>
